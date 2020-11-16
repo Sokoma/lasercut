@@ -1,0 +1,221 @@
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(137deg, rgba(2,0,36,1) 27%, rgba(19,19,70,1) 100%);
+    color: rgb(255, 238, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: 'Turret Road', cursive;
+}
+
+.score {
+    font-size: 44px;
+}
+
+.game-body-wrapper {
+    max-width: 600px;
+    max-height: 600px;
+    position: relative;
+}
+.game-body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: relative;
+    box-sizing: border-box;
+    padding: 2px;
+}
+
+.game-row {
+    height: 16.666666666%;
+    position: relative;
+}
+.game-tile-wrapper{
+    width:  16.666666666%;
+    display: inline-block;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2px;
+    touch-action: manipulation;
+    transition: .2s;
+}
+
+.game-tile {
+    background-color: #00297A;
+    height: 100%;
+    pointer-events: none;
+    box-shadow: inset 3px 3px 0 3px rgb(32, 32, 32), inset -3px -3px 0 3px rgb(75, 75, 75);
+    touch-action: manipulation;
+}
+
+@media only screen and (max-width: 400px) {
+    .game-tile {
+        box-shadow: inset 1.5px 1.5px 0 1.5px rgb(32, 32, 32), inset -1.5px -1.5px 0 1.5px rgb(75, 75, 75);
+    }
+  }
+
+.game-tile-wrapper.active {
+    padding: 8px;
+}
+
+.game-tile-wrapper.active  .game-tile{
+    background-color: rgb(255, 238, 0);
+    box-shadow: 0 0 6px rgb(255, 238, 0), inset 3px 3px 0 3px rgb(182, 170, 0), inset -3px -3px 0 3px rgb(136, 127, 0);
+}
+
+@media only screen and (max-width: 400px) {
+    .game-tile-wrapper.active  .game-tile{
+        background-color: rgb(255, 238, 0);
+        box-shadow: 0 0 6px rgb(255, 238, 0), inset 1.5px 1.5px 0 1.5px rgb(182, 170, 0), inset -1.5px -1.5px 0 1.5px rgb(136, 127, 0);
+    }
+  }
+
+.columns-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.game-column {
+    width: 16.66666666%;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+}
+
+.game-column:before {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #EC0B43;
+    transform: translateX(-50%);
+}
+
+.game-column:after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #EC0B43;
+    transform: translateX(-50%);
+}
+
+.game-row:before {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #EC0B43;
+    transform: translateY(-50%);
+}
+
+.game-row:after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #EC0B43;
+    transform: translateY(-50%);
+}
+
+.laser-top::before, .game-column.laser-bottom::after , .game-row.laser-top::before, .game-row.laser-bottom::after {
+    visibility: visible;
+}
+
+
+.laser-beam {
+    position: absolute;
+    background-color: #EC0B43;
+    visibility: hidden;
+    box-shadow: 0px 0px 6px 6px #ff074565;
+    pointer-events: none;
+
+}
+
+
+.lasers-visible .laser-top .laser-beam, .lasers-visible .laser-bottom .laser-beam , .lasers-visible .laser-top .laser-beam, .lasers-visible .laser-bottom .laser-beam {
+    visibility: visible;
+}
+
+
+.game-row .laser-beam {
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+}
+
+.game-column .laser-beam {
+    height: 100%;
+    width: 3px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timer-wrapper {
+    max-width: 600px;
+    height: 10px;
+    margin: 15px 0;
+}
+
+
+.timer {
+    height: 100%;
+    width: 0;
+    background-color: rgb(255, 238, 0);
+    box-shadow: 0 0 6px rgb(255, 238, 0);
+}
+
+.pop-up-screen {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c3362d3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over .game-over-screen {
+    display: flex;
+}
+
+.new-game .new-game-screen {
+    display: flex;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 12px 15px;
+    background-color: black;
+    margin: 6px 0;
+    font-size: 22px;
+}

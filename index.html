@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffee00" />
+    <title>Lasercut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <p><b class="score" id="score">0</b></p>
+    <div class="timer-wrapper" id="timer-wrapper"><div class="timer" id="timer"></div></div>
+    <div class="game-body-wrapper new-game" id="game-body-wrapper">
+    <div class="game-body" id="game-body">
+        <div class="game-row"><div class="laser-beam"></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div></div>
+        <div class="game-row"><div class="laser-beam"></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div></div>
+        <div class="game-row"><div class="laser-beam"></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div></div>
+        <div class="game-row"><div class="laser-beam"></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div></div>
+        <div class="game-row"><div class="laser-beam"></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div></div>
+        <div class="game-row"><div class="laser-beam"></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div><div class="game-tile-wrapper"><div class="game-tile"></div></div></div>
+        <div class="columns-overlay">
+            <div class="game-column"><div class="laser-beam"></div></div><div class="game-column"><div class="laser-beam"></div></div><div class="game-column"><div class="laser-beam"></div></div><div class="game-column"><div class="laser-beam"></div></div><div class="game-column"><div class="laser-beam"></div></div><div class="game-column"><div class="laser-beam"></div></div>
+        </div>
+    </div>
+    <div class="game-over-screen pop-up-screen">
+        <span class="final-score" id="final-score"></span>
+        <div class="btn" id="restart-btn">Play again</div>
+    </div>
+    <div class="new-game-screen pop-up-screen">
+        <h2>Start new game!</h2>
+        <div id="difficulties-wrapper">
+            <div class="diff-btn btn" data-difficulty="easy">Easy</div>
+            <div class="diff-btn btn" data-difficulty="normal">Normal</div>
+            <div class="diff-btn btn" data-difficulty="hard">Hard</div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="./scaling.js"></script>
+<script src="./games.js"></script>
+</html>
